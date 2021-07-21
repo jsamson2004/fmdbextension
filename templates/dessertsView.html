@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block title%}List of Desserts{% endblock %}
+
+{% block content%}
+
+<div class="container">
+  <h1>Desserts</h1>
+  <div class="row">
+    {% for dessert in data.desserts %}
+    {{dessert.title}}
+    {{dessert.author}}
+    <a href="{{url_for('desserts_detail', title=dessert.title)}}">Details</a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
